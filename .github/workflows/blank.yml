@@ -28,17 +28,16 @@ jobs:
       
     - name: Github Action for wget
       #uses: wei/wget@v1.1.1
-      #env:
-      #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        OWNER: "opend-chiitah"
+	REPO: "ScraperGUI"
       run: |
-        curl -H "Authorization: Bearer ${{secrets.CUSTOM_TOKEN}}" https://api.github.com/repos/opend-chiitah/ScraperGUI/readme
-        #curl -H "Authorization: ${GITHUB_TOKEN}" https://api.github.com/repos/MitsuK/ScraperGUI/readme
-        #curl --header 'authorization: token ${GITHUB_TOKEN}' \
-        #--header 'Accept: application/vnd.github.v3.raw' \
-        #--remote-name \
-        #--location https://raw.githubusercontent.com/opend-chiitah/ScraperGUI/master/README.md
+        curl -H "Authorization: Bearer ${{secrets.CUSTOM_TOKEN}}" \
+	-H "Accept: application/vnd.github.raw" \
+	-o "README-${REPO}.md" \
+        https://api.github.com/repos/${OWNER}/${REPO}/readme
         ls
-        cat README.md
+        cat README-${REPO}.md
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
