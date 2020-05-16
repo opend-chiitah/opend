@@ -28,8 +28,6 @@ jobs:
       
     - name: Github Action for wget
       #uses: wei/wget@v1.1.1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo ${repo-token}
 	
