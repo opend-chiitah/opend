@@ -28,10 +28,10 @@ jobs:
       
     - name: Github Action for wget
       #uses: wei/wget@v1.1.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #env:
+      #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        curl -H "Authorization: Bearer ${GITHUB_TOKEN}" https://api.github.com/repos/opend-chiitah/ScraperGUI/readme
+        curl -H "Authorization: Bearer ${{secrets.CUSTOM_TOKEN}}" https://api.github.com/repos/opend-chiitah/ScraperGUI/readme
         #curl -H "Authorization: ${GITHUB_TOKEN}" https://api.github.com/repos/MitsuK/ScraperGUI/readme
         #curl --header 'authorization: token ${GITHUB_TOKEN}' \
         #--header 'Accept: application/vnd.github.v3.raw' \
