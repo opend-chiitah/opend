@@ -33,8 +33,9 @@ jobs:
       run: |
         curl --header 'authorization: token ${GITHUB_TOKEN}' \
         --header 'Accept: application/vnd.github.v3.raw' \
-        --remote-name \
+        -O tmp_readme.md \
         --location https://raw.githubusercontent.com/opend-chiitah/ScraperGUI/master/README.md
+        cat tmp_readme.md
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
