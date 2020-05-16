@@ -30,11 +30,11 @@ jobs:
       #uses: wei/wget@v1.1.1
       env:
         OWNER: "opend-chiitah"
-	REPO: "ScraperGUI"
+        REPO: "ScraperGUI"
       run: |
         curl -H "Authorization: Bearer ${{secrets.CUSTOM_TOKEN}}" \
-	-H "Accept: application/vnd.github.raw" \
-	-o "README-${REPO}.md" \
+        -H "Accept: application/vnd.github.raw" \
+        -o "README-${REPO}.md" \
         https://api.github.com/repos/${OWNER}/${REPO}/readme
         ls
         cat README-${REPO}.md
