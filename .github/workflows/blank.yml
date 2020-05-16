@@ -38,6 +38,7 @@ jobs:
         git config --global user.name 'open-chiitah'
         git config --global user.email 'opend-chiitah@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git add ./
         git commit -am "Pushing README"
         git push
     - name: Run a multi-line script
