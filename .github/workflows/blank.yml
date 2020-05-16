@@ -31,7 +31,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        curl -H "Authorization: ${GITHUB_TOKEN}" https://api.github.com/repos/opend-chiitah/opend/readme
+        curl -H "Authorization: ${GITHUB_TOKEN}" https://api.github.com/repos/opend-chiitah/ScraperGUI/readme
         #curl --header 'authorization: token ${GITHUB_TOKEN}' \
         #--header 'Accept: application/vnd.github.v3.raw' \
         #--remote-name \
